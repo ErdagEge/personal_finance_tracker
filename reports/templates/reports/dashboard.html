@@ -1,0 +1,12 @@
+<h2>Reports Dashboard</h2>
+{% if no_data %}
+  <p>No transactions to show yet.</p>
+{% else %}
+  <div>{{ chart|safe }}</div>
+  <h3>Category Breakdown</h3>
+  <ul>
+    {% for cat_id, amount in category_breakdown.items %}
+      <li>Category {{ cat_id }}: {{ amount }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
