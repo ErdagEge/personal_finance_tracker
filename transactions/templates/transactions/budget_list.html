@@ -1,0 +1,9 @@
+<h2>Budgets</h2>
+<a href="{% url 'add_budget' %}">Add Budget</a>
+<ul>
+  {% for b in budgets %}
+    <li>{{ b.month }} | {{ b.category }} | {{ b.amount }}</li>
+  {% empty %}
+    <li>No budgets defined.</li>
+  {% endfor %}
+</ul>
